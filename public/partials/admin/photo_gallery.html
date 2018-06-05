@@ -1,0 +1,23 @@
+<h1>Photo Gallery</h1>
+<hr/>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Menu Index</th>
+      <th>Caption</th>
+      <th>Image</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tr ng-repeat="photo in allPhotos">
+    <td>{{photo._id}}</td>
+    <td>{{photo.caption}}</td>
+    <td><img ng-src="{{photo.path}}" alt="{{photo.caption}}" width="100" height="100"/></td>
+    <td> <a ng-href="#/admin/add-edit-page/{{photo._id}}">Edit</a>
+    </td>
+    <td> <a ng-href="#" ng-click="deletePage(photo._id)">Delete</a>
+    </td>
+  </tr>
+</table>
